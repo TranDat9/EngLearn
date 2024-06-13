@@ -2,19 +2,16 @@ package com.example.sel.screen.user.blog
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.sel.base.model.HistoryExam
 import com.example.sel.databinding.ActivityBlogBinding
-import com.example.sel.screen.user.HistoryActivity
 import com.example.sel.screen.user.blog.adapter.BlogAdapter
 import com.example.sel.screen.user.blog.model.BlogItemModel
+import com.example.sel.screen.user.historyexam.HistoryExamActivity
 import com.example.sel.screen.user.home.HomeActivity
 import com.example.sel.screen.user.profile.ProfileActivity
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -42,7 +39,7 @@ class BlogActivity : AppCompatActivity() {
             startActivity(Intent(this, ProfileActivity::class.java))
         }
         binding.navimgBlog.setOnClickListener {
-            startActivity(Intent(this, HistoryActivity::class.java))
+            startActivity(Intent(this, HistoryExamActivity::class.java))
         }
         binding.navimgHome.setOnClickListener {
             startActivity(Intent(this, HomeActivity::class.java))

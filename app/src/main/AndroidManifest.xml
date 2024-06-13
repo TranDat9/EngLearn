@@ -14,9 +14,7 @@
         android:theme="@style/Theme.SEL"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name=".screen.user.HistoryActivity"
-            android:exported="false" />
+        <activity android:name=".screen.user.historyexam.HistoryExamActivity" />
         <activity android:name=".screen.user.blog.ReadMoreActivity" />
         <activity android:name=".screen.user.blog.AddArticleActivity" />
         <activity android:name=".screen.user.blog.BlogActivity" />

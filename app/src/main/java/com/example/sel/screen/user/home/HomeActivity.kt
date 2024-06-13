@@ -17,6 +17,7 @@ import com.example.sel.base.model.ItemPostConvert
 import com.example.sel.screen.user.choose_answer.ChooseAnswerActivity
 import com.example.sel.databinding.ActivityHomeBinding
 import com.example.sel.screen.user.blog.BlogActivity
+import com.example.sel.screen.user.historyexam.HistoryExamActivity
 import com.example.sel.screen.user.home.BottomSheetTopic.BottomSheetTopic
 import com.example.sel.screen.user.login.LoginActivity
 import com.example.sel.screen.user.profile.ProfileActivity

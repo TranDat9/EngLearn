@@ -28,6 +28,17 @@
             tools:ignore="UseAppTint" />
 
         <ImageView
+            android:id="@+id/imghistory"
+            android:layout_width="61dp"
+            android:layout_height="55dp"
+
+            android:layout_marginTop="20dp"
+            android:src="@drawable/history"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UseAppTint" />
+
+        <ImageView
             android:id="@+id/imagerank1"
             android:layout_width="60dp"
             android:layout_height="100dp"

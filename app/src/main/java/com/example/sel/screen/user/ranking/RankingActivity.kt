@@ -8,6 +8,7 @@ import com.example.sel.base.Utils
 import com.example.sel.base.model.ResponseRank
 import com.example.sel.databinding.ActivityHomeBinding
 import com.example.sel.databinding.ActivityRankingBinding
+import com.example.sel.screen.user.historyexam.HistoryExamActivity
 import com.example.sel.screen.user.home.HomeActivity
 import com.example.sel.screen.user.home.HomeViewModel
 
@@ -28,6 +29,7 @@ class RankingActivity : BaseBindingActivity<RankingViewModel, ActivityRankingBin
 
     private fun initListener() {
         binding?.imgVBackRank?.setOnClickListener(this)
+        binding?.imghistory?.setOnClickListener(this)
     }
     override fun fetchData() {
         binding?.lifecycleOwner = this
@@ -65,6 +67,14 @@ class RankingActivity : BaseBindingActivity<RankingViewModel, ActivityRankingBin
                 Utils.startActivityWithResultCode(
                     this@RankingActivity,
                     HomeActivity(),
+                    0,
+                    null,
+                )
+            }
+            R.id.imghistory -> {
+                Utils.startActivityWithResultCode(
+                    this@RankingActivity,
+                    HistoryExamActivity(),
                     0,
                     null,
                 )
