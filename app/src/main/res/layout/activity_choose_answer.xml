@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.example.sel.screen.user.choose_answer.ChooseAnswerViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@color/blue_main"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.example.sel.base.CustomTextView
+            android:id="@+id/txt_title"
+            android:layout_width="0dp"
+            android:alpha="0.5"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:layout_height="@dimen/dimen_56"
+            android:layout_marginEnd="@dimen/dimen_12"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:background="@drawable/background_button_accent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_close_question"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/btn_close_question"
+            android:alpha="0.5"
+            android:layout_width="@dimen/dimen_56"
+            android:layout_height="@dimen/dimen_56"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:background="@drawable/background_button_accent"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_title" />
+
+        <ImageView
+            android:id="@+id/imgMore"
+            android:layout_width="@dimen/dimen_30"
+            android:layout_height="@dimen/dimen_30"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_close_question"
+            app:layout_constraintEnd_toEndOf="@+id/btn_close_question"
+            app:layout_constraintStart_toStartOf="@+id/btn_close_question"
+            app:layout_constraintTop_toTopOf="@+id/btn_close_question"
+            app:srcCompat="@drawable/dsc_loy_ic_close" />
+
+        <com.example.sel.base.CustomTextView
+            android:id="@+id/txt_score"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_56"
+            android:layout_marginTop="12dp"
+            android:alpha="0.5"
+            android:background="@drawable/background_button_accent"
+            app:layout_constraintEnd_toEndOf="@+id/btn_close_question"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txt_title"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score : "
+            android:layout_marginStart="@dimen/dimen_16"
+            android:fontFamily="@font/bungee"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_score"
+            app:layout_constraintStart_toStartOf="@+id/txt_score"
+            app:layout_constraintTop_toTopOf="@+id/txt_score" />
+        <TextView
+            android:id="@+id/score_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.score}"
+            tools:text="1000"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:fontFamily="@font/bungee"
+            android:drawableRight="@android:drawable/ic_menu_myplaces"
+            app:layout_constraintBottom_toBottomOf="@+id/score"
+            app:layout_constraintStart_toEndOf="@+id/score"
+            app:layout_constraintTop_toTopOf="@+id/score" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:fontFamily="@font/bungee"
+            android:gravity="center"
+            android:text="Answer and Question"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_title"
+            app:layout_constraintStart_toStartOf="@+id/txt_title"
+            app:layout_constraintTop_toTopOf="@+id/txt_title" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_question"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/background_button_accent"
+            app:layout_constraintEnd_toEndOf="@+id/btn_close_question"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txt_title"
+            app:layout_constraintTop_toBottomOf="@+id/txt_score" />
+
+        <TextView
+            android:id="@+id/txtquestionTN"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredokaoneregular"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="@{viewModel.contentQuestion}"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:layout_marginEnd="@dimen/dimen_12"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/layout_question"
+            app:layout_constraintStart_toStartOf="@+id/layout_question"
+            app:layout_constraintTop_toTopOf="@+id/layout_question"
+            tools:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" />
+
+        <ImageView
+            android:id="@+id/img_question"
+            imageUrl="@{viewModel.imgQuestion}"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_150"
+            android:layout_marginTop="@dimen/dimen_16"
+            app:layout_constraintEnd_toEndOf="@+id/txtquestionTN"
+            app:layout_constraintStart_toStartOf="@+id/txtquestionTN"
+            app:layout_constraintTop_toBottomOf="@+id/txtquestionTN" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvListAnswer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_26"
+            android:layout_marginEnd="@dimen/dimen_26"
+            android:layout_marginTop="@dimen/dimen_16"
+            app:itemModels="@{viewModel.convertedItemChooseAnswer}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_question"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_choose_answer" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewAnswer"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/rcvListAnswer"
+            app:layout_constraintStart_toStartOf="@+id/rcvListAnswer"
+            app:layout_constraintTop_toBottomOf="@+id/rcvListAnswer">
+
+            <TextView
+                android:id="@+id/txtContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bungee"
+                android:text="@string/p_n_ch_nh_s_ch_l"
+                android:textSize="@dimen/text_size_14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_6"
+                android:fontFamily="@font/bungee"
+                android:textColor="@color/delete_color"
+                android:textSize="@dimen/text_size_14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtContent"
+                app:layout_constraintStart_toEndOf="@+id/txtContent"
+                app:layout_constraintTop_toTopOf="@+id/txtContent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnconfirmTN"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="false"
+            android:layout_marginEnd="@dimen/dimen_26"
+            android:background="@drawable/background_button_accent"
+            android:fontFamily="@font/fredokaoneregular"
+            android:gravity="center"
+            android:text="Confirm"
+            android:layout_marginTop="@dimen/dimen_36"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rcvListAnswer" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout>
+    <data>
+        <import type="android.view.View"/>
+        <import type="com.example.sel.base.Utils"/>
+        <variable
+            name="viewModel"
+            type="com.example.sel.screen.user.profile.ProfileViewModel" />
+    </data>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/white"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/imgHOME"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/building"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="300dp" />
+
+                <ImageView
+                    android:id="@+id/imageViewProfile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/profile" />
+
+                <TextView
+                    android:id="@+id/textViewTen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/imageViewProfile"
+                    android:fontFamily="@font/bungee"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="Chỉnh sửa/nthông tin cá nhân"
+                    android:textSize="20sp" />
+
+                <TextView
+
+
+                    android:id="@+id/tVusername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewTen"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/imageViewProfile"
+                    android:includeFontPadding="false"
+                    android:text=""
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-100dp"
+                android:padding="20dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/blue_main"
+                    app:cardElevation="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/point" />
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/blue_main"
+                    app:cardElevation="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="5dp">
+                        <ImageView
+                            android:id="@+id/textviewPoint"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/bungee"
+                           android:src="@drawable/ic_blog"
+                            />
+
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        android:id="@+id/layout_name"
+                        layout="@layout/layout_input_common" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        android:id="@+id/layout_email"
+                        layout="@layout/layout_email" />
+                </LinearLayout>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                    <include-->
+<!--                        android:id="@+id/layout_password"-->
+<!--                        layout="@layout/layout_password" />-->
+<!--                </LinearLayout>-->
+                <Button
+                    android:id="@+id/buttonCapNhat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:backgroundTint="@color/blue_main"
+                    android:fontFamily="@font/bungee"
+                    android:text="Cập nhật"
+                    android:textColor="@color/black" />
+                <Button
+                    android:id="@+id/buttonLogOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/blue_main"
+                    android:fontFamily="@font/bungee"
+                    android:text="Đăng Xuất"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>
+

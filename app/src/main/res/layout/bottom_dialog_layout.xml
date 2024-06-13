@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <data>
+
+                <import type="android.view.View" />
+
+                <variable
+                    name="viewModel"
+                    type="com.example.sel.screen.user.home.HomeViewModel" />
+
+
+
+        </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/spaceOutsidePopup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true">
+
+                <View
+                    android:id="@+id/bgrWhiteTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@drawable/bgr_round_top_white_16"
+                    app:layout_constraintTop_toTopOf="@+id/btnClose"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <ImageView
+                    android:id="@+id/btnClose"
+                    android:layout_width="@dimen/dimen_40"
+                    android:layout_height="@dimen/dimen_40"
+                    app:srcCompat="@drawable/hi_ic_close_popup"
+                    app:layout_constraintBottom_toTopOf="@+id/alignView"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <View
+                    android:id="@+id/alignView"
+                    android:layout_width="@dimen/dimen_1"
+                    android:layout_height="@dimen/dimen_1"
+                    app:layout_constraintTop_toTopOf="@+id/txtTitle"
+                    app:layout_constraintBottom_toBottomOf="@+id/txtTitle"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <com.example.sel.base.CustomTextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Chọn loại câu hỏi"
+                    android:fontFamily="@font/bungee"
+                    app:layout_constraintBottom_toTopOf="@+id/lineTitle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/btnClose"
+                    android:layout_marginBottom="@dimen/dimen_16"
+                    android:layout_marginStart="@dimen/dimen_24"
+                    android:layout_marginEnd="@dimen/dimen_12"
+                    app:fontValue="inter_semi_bold"
+                    android:textSize="@dimen/text_size_18sp"
+                    android:textColor="@color/textColorPrimary" />
+
+                <View
+                    android:id="@+id/lineTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_1"
+                    app:layout_constraintBottom_toTopOf="@+id/rcvListAddress"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/btnClose"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:layout_marginBottom="@dimen/dimen_20"
+                    android:layout_marginStart="@dimen/dimen_24"
+                    android:background="@color/grey_1" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvListAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/dimen_16"
+                    android:paddingStart="@dimen/dimen_24"
+                    android:paddingEnd="@dimen/dimen_24"
+                    app:itemModels="@{viewModel.convertedItemPostList}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHeight_max="@dimen/dimen_360"
+                    tools:itemCount="5"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:listitem="@layout/item_topic" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.example.sel.screen.user.ranking.RankingViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgVBackRank"
+            android:layout_width="61dp"
+            android:layout_height="55dp"
+
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UseAppTint" />
+
+        <ImageView
+            android:id="@+id/imagerank1"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+
+            android:src="@drawable/top1"
+            app:layout_constraintBottom_toBottomOf="@+id/imagerank3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagerank3"
+            app:layout_constraintTop_toTopOf="@+id/imagerank2" />
+
+        <ImageView
+
+            android:id="@+id/imagerank2"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+
+            android:src="@drawable/top2"
+            app:layout_constraintEnd_toStartOf="@+id/imagerank3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgVBackRank" />
+
+        <TextView
+            android:id="@+id/tvpointrank3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bungee"
+            android:gravity="center"
+            android:text="@{viewModel.topScore3}"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvpointrank1"
+            app:layout_constraintEnd_toEndOf="@+id/imagerank1"
+            app:layout_constraintStart_toStartOf="@+id/imagerank1"
+            app:layout_constraintTop_toBottomOf="@+id/imagerank3"
+            app:layout_constraintVertical_bias="0.175"
+            tools:text="10" />
+
+        <TextView
+            android:id="@+id/tvpointrank2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bungee"
+            android:gravity="center"
+            android:text="@{viewModel.topScore2}"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/imagerank2"
+            app:layout_constraintStart_toStartOf="@+id/imagerank2"
+            app:layout_constraintTop_toBottomOf="@+id/imagerank2"
+            tools:text="10" />
+
+        <TextView
+            android:id="@+id/tvpointrank1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bungee"
+            android:text="@{viewModel.topScore1}"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvpointrank2"
+            app:layout_constraintEnd_toEndOf="@+id/imagerank3"
+            app:layout_constraintStart_toStartOf="@+id/imagerank3"
+            app:layout_constraintTop_toBottomOf="@+id/imagerank2"
+            tools:text="10" />
+
+        <ImageView
+            android:id="@+id/imagerank3"
+            android:layout_width="60dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+
+            android:src="@drawable/top3"
+            app:layout_constraintBottom_toBottomOf="@+id/imagerank2"
+            app:layout_constraintEnd_toStartOf="@+id/imagerank1"
+            app:layout_constraintStart_toEndOf="@+id/imagerank2"
+            app:layout_constraintTop_toTopOf="@+id/imagerank2" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/userranklist"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:itemModels="@{viewModel.convertedItemRank}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvpointrank2"
+            tools:listitem="@layout/item_ranking" />
+
+        <TextView
+            android:id="@+id/textViewRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/fredokaoneregular"
+            android:text="Leader board"
+            android:textColor="@color/primary"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

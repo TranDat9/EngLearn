@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by PS Solutions on 08/24/2021.
+  ~ Copyright © 2021 Softbank. All rights reserved.
+  ~
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/white" />
+    <corners android:radius="@dimen/dimen_16" />
+    <solid android:color="@color/blue_main" />
+</shape>

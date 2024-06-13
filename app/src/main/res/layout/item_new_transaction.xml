@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="com.example.sel.base.Utils"/>
+        <variable
+            name="itemBaseModel"
+            type="com.example.sel.base.model.ItemHomeMenuConverted" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layChooseUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> itemBaseModel.onItemCheckToggle()}"
+        >
+        <View
+            android:id="@+id/layoutItem"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginEnd="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:alpha="0.5"
+            android:shadowRadius="20"
+            android:background="@drawable/background_rounded_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+        />
+
+<!--        imageUrl="@{itemBaseModel.image}"-->
+
+
+        <ImageView
+            android:id="@+id/imgItem_transaction"
+            android:layout_width="@dimen/dimen_80"
+            android:layout_height="@dimen/dimen_80"
+            android:layout_marginTop="@dimen/dimen_24"
+            android:src="@drawable/studying"
+            imageUrl="@{itemBaseModel.image}"
+            app:layout_constraintEnd_toEndOf="@+id/txt_transaction"
+            app:layout_constraintStart_toStartOf="@+id/txt_transaction"
+            app:layout_constraintTop_toTopOf="@+id/layoutItem" />
+
+        <com.example.sel.base.CustomTextView
+            android:id="@+id/txt_transaction"
+            android:layout_width="@dimen/dimen_140"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:layout_marginBottom="@dimen/dimen_20"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:lineHeight="@dimen/dimen_24"
+            android:lines="2"
+            android:fontFamily="@font/bungee"
+            android:text="@{itemBaseModel.name}"
+            android:maxWidth="@dimen/dimen_140"
+            android:textSize="@dimen/text_size_14sp"
+            app:fontValue="inter_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/layoutItem"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@+id/layoutItem"
+            app:layout_constraintTop_toBottomOf="@id/imgItem_transaction"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="Thay đổi\nThông tin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

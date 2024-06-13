@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="com.example.sel.base.Utils"/>
+        <variable
+            name="itemBaseModel"
+            type="com.example.sel.base.model.ItemPostConvert" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintParent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        android:layout_marginBottom="@dimen/dimen_16"
+        android:background="@drawable/bgr_round_gray_hdi_8"
+        android:onClick="@{() -> itemBaseModel.onItemCheckToggle()}"
+        android:paddingHorizontal="@dimen/dimen_16">
+
+        <com.example.sel.base.CustomTextView
+            android:id="@+id/tvNameAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_1"
+            android:textSize="@dimen/text_size_16sp"
+            android:text="@{itemBaseModel.description}"
+            android:fontFamily="@font/poppin_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivCheck"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tool:text="Topic 1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCheck"
+            android:layout_width="@dimen/dimen_20"
+            android:layout_height="@dimen/dimen_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="@{itemBaseModel.isCheckAnswer? View.VISIBLE : View.GONE}"
+            app:srcCompat="@drawable/ic_check_blue" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
