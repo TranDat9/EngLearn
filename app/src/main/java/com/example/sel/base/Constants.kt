@@ -19,6 +19,7 @@ class Constants {
             const val USER_ID = "USER_ID"
             const val SIZE_QUESTION = "SIZE_QUESTION"
             const val ANSWERED_QUESTIONS = "ANSWERED_QUESTIONS"
+            const val PODCAST_ID = "POSTCASTID"
 
 
 

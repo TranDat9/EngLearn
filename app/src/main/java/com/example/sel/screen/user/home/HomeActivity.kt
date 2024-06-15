@@ -20,6 +20,7 @@ import com.example.sel.screen.user.blog.BlogActivity
 import com.example.sel.screen.user.historyexam.HistoryExamActivity
 import com.example.sel.screen.user.home.BottomSheetTopic.BottomSheetTopic
 import com.example.sel.screen.user.login.LoginActivity
+import com.example.sel.screen.user.podcast2.Podcast2Activity
 import com.example.sel.screen.user.profile.ProfileActivity
 import com.example.sel.screen.user.ranking.RankingActivity
 
@@ -97,7 +98,7 @@ class HomeActivity : BaseBindingActivity<HomeViewModel, ActivityHomeBinding>(), 
             R.id.btnUser -> {
                 Utils.startActivityWithResultCode(
                     this@HomeActivity,
-                    BlogActivity(),
+                    HistoryExamActivity(),
                     0,
                     null,
                 )
@@ -105,7 +106,7 @@ class HomeActivity : BaseBindingActivity<HomeViewModel, ActivityHomeBinding>(), 
             R.id.btnViewMore -> {
                 Utils.startActivityWithResultCode(
                     this@HomeActivity,
-                    RankingActivity(),
+                    Podcast2Activity(),
                     0,
                     null,
                 )

@@ -1,5 +1,6 @@
 package com.example.sel.bindingAdapter
 
+import android.util.Log
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sel.base.RecyclerViewLoadMoreScroll
@@ -8,12 +9,14 @@ import com.example.sel.interfaces.ItemBaseModel
 
 @BindingAdapter(value = ["itemModels"])
 fun bindItemModels(recyclerView: RecyclerView, itemModels: List<ItemBaseModel>?) {
+    Log.d("BindingAdapter", "bindItemModels called with ${itemModels?.size} items")
     val adapter = getOrCreateAdapter(recyclerView = recyclerView)
         adapter.updateItems(itemModels)
 }
 
 @BindingAdapter(value = ["itemLoadMoreModels", "loadMore"], requireAll = false)
 fun bindItemLoadMoreModels(recyclerView: RecyclerView, itemLoadMoreModels: List<ItemBaseModel>?, loadMore: RecyclerViewLoadMoreScroll? = null) {
+    Log.d("BindingAdapter", "bindItemLoadMoreModels called with ${itemLoadMoreModels?.size} items")
     val adapter = getOrCreateAdapter(recyclerView = recyclerView, loadMore = loadMore)
         adapter.updateItemsDiffUtil(itemLoadMoreModels)
 }

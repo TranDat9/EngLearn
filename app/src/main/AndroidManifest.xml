@@ -14,11 +14,13 @@
         android:theme="@style/Theme.SEL"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity android:name=".screen.user.podcast2.Podcast2Activity" />
+        <activity android:name=".screen.user.podcast.PodCastActivity" />
         <activity android:name=".screen.user.historyexam.HistoryExamActivity" />
         <activity android:name=".screen.user.blog.ReadMoreActivity" />
         <activity android:name=".screen.user.blog.AddArticleActivity" />
         <activity android:name=".screen.user.blog.BlogActivity" />
-        <activity android:name=".screen.user.home.HomeActivity" />
+<!--        <activity android:name=".screen.user.home.HomeActivity" />-->
         <activity android:name=".screen.user.profile.ProfileActivity" />
         <activity android:name=".screen.user.register.RegisterActivity" />
         <activity android:name=".screen.user.choose_answer.ChooseAnswerActivity" />
@@ -26,7 +28,7 @@
         <activity android:name=".screen.user.ranking.RankingActivity" />
         <activity android:name=".screen.user.updatepasss.UpdatePassAcivity" />
         <activity
-            android:name=".screen.user.login.LoginActivity"
+            android:name=".screen.user.home.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -2,6 +2,7 @@ package com.example.sel.base
 
 import com.example.sel.base.model.HistoryExam
 import com.example.sel.base.model.ReponHistoryExam
+import com.example.sel.base.model.ReponsePodcast
 import com.example.sel.base.model.RequesPasword
 import com.example.sel.base.model.RequestLogin
 import com.example.sel.base.model.RequestRegister
@@ -43,7 +44,7 @@ interface ApiService {
             .addInterceptor(AuthInterceptor())
 
         val apiService: ApiService =
-            Retrofit.Builder().baseUrl("https://e371-123-24-167-133.ngrok-free.app")
+            Retrofit.Builder().baseUrl("https://c533-42-118-176-129.ngrok-free.app")
                 .addConverterFactory(GsonConverterFactory.create(gson)).client(okBuilder.build())
                 .build().create(ApiService::class.java)
     }
@@ -94,5 +95,9 @@ interface ApiService {
 
     @GET("/api/getHistoryByUser/{id}")
     suspend fun getHistoryByUser(@Path("id") id: Int): Response<ReponHistoryExam>
+
+    @GET("/api/getAll-podcast")
+    suspend fun getAllPostCast(): Response<ReponsePodcast>
+
 
 }
