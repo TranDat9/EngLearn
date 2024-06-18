@@ -10,6 +10,7 @@ import com.example.sel.base.model.RequestSubmitExams
 import com.example.sel.base.model.RequestUpdatePass
 import com.example.sel.base.model.ResponseLogin
 import com.example.sel.base.model.ResponseMessage
+import com.example.sel.base.model.ResponsePodcastId
 import com.example.sel.base.model.ResponsePost
 import com.example.sel.base.model.ResponseQuestionQuiz
 import com.example.sel.base.model.ResponseRank
@@ -44,7 +45,7 @@ interface ApiService {
             .addInterceptor(AuthInterceptor())
 
         val apiService: ApiService =
-            Retrofit.Builder().baseUrl("https://c533-42-118-176-129.ngrok-free.app")
+            Retrofit.Builder().baseUrl("https://b584-42-118-176-129.ngrok-free.app")
                 .addConverterFactory(GsonConverterFactory.create(gson)).client(okBuilder.build())
                 .build().create(ApiService::class.java)
     }
@@ -99,5 +100,7 @@ interface ApiService {
     @GET("/api/getAll-podcast")
     suspend fun getAllPostCast(): Response<ReponsePodcast>
 
+    @GET("/api/getIdPostcast/{id}")
+    suspend fun getPodCastId(@Path("id") id: Int): Response<ResponsePodcastId>
 
 }

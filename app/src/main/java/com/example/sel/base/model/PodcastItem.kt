@@ -4,7 +4,7 @@ data class PodcastItem(
     val id: Int?=null,
     val name: String?=null,
     val audioUrl: String?=null,
-    val transcript: List<Transcript>?=null,
+    val transcript: List<Transcript>,
     val created_at: String?=null,
     val updated_at: String?=null,
     val mane_podcast: String?=null,
@@ -12,7 +12,7 @@ data class PodcastItem(
 )
 
 data class Transcript(
-    val startTime: Int?=null,
-    val endTime: Int?=null,
-    val text: String?=null
+    val startTime: Int,
+    val endTime: Int,
+    val text: String
 )

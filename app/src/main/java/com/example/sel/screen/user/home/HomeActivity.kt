@@ -17,8 +17,10 @@ import com.example.sel.base.model.ItemPostConvert
 import com.example.sel.screen.user.choose_answer.ChooseAnswerActivity
 import com.example.sel.databinding.ActivityHomeBinding
 import com.example.sel.screen.user.blog.BlogActivity
+import com.example.sel.screen.user.dictionary.DictionaryActivity
 import com.example.sel.screen.user.historyexam.HistoryExamActivity
 import com.example.sel.screen.user.home.BottomSheetTopic.BottomSheetTopic
+import com.example.sel.screen.user.listenpodcast.ListenPodcastActivity
 import com.example.sel.screen.user.login.LoginActivity
 import com.example.sel.screen.user.podcast2.Podcast2Activity
 import com.example.sel.screen.user.profile.ProfileActivity
@@ -92,13 +94,16 @@ class HomeActivity : BaseBindingActivity<HomeViewModel, ActivityHomeBinding>(), 
         binding?.btnUser?.setOnClickListener(this)
         binding?.btnViewMore?.setOnClickListener(this)
         binding?.btnTest?.setOnClickListener(this)
+        binding?.btnnavpodcast?.setOnClickListener(this)
+        binding?.btnnavdictinary?.setOnClickListener(this)
+        binding?.btnnavprofile?.setOnClickListener(this)
     }
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btnUser -> {
                 Utils.startActivityWithResultCode(
                     this@HomeActivity,
-                    HistoryExamActivity(),
+                    BlogActivity(),
                     0,
                     null,
                 )
@@ -106,7 +111,7 @@ class HomeActivity : BaseBindingActivity<HomeViewModel, ActivityHomeBinding>(), 
             R.id.btnViewMore -> {
                 Utils.startActivityWithResultCode(
                     this@HomeActivity,
-                    Podcast2Activity(),
+                    RankingActivity(),
                     0,
                     null,
                 )
@@ -120,6 +125,30 @@ class HomeActivity : BaseBindingActivity<HomeViewModel, ActivityHomeBinding>(), 
                     Bundle().apply {
                         putInt(Constants.BundleParam.POST_ID,postID?:0)
                     }
+                )
+            }
+            R.id.btnnavpodcast -> {
+                Utils.startActivityWithResultCode(
+                    this@HomeActivity,
+                    Podcast2Activity(),
+                    0,
+                    null
+                )
+            }
+            R.id.btnnavprofile -> {
+            Utils.startActivityWithResultCode(
+                this@HomeActivity,
+                ProfileActivity(),
+                0,
+                null
+            )
+        }
+            R.id.btnnavdictinary -> {
+                Utils.startActivityWithResultCode(
+                    this@HomeActivity,
+                    DictionaryActivity(),
+                    0,
+                    null
                 )
             }
         }

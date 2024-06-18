@@ -175,23 +175,23 @@
           >
 
             <ImageView
-
+               android:id="@+id/btnnavdictinary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
-                android:src="@drawable/navhome" />
+                android:src="@drawable/dictionary" />
 
             <ImageView
-
+                android:id="@+id/btnnavpodcast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
-                android:src="@drawable/navblog" />
+                android:src="@drawable/headphone" />
 
             <ImageView
-
+                android:id="@+id/btnnavprofile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

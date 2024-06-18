@@ -18,6 +18,7 @@ import com.example.sel.screen.user.historyexam.HistoryExamActivity
 import com.example.sel.screen.user.historyexam.HistoryExamViewModel
 import com.example.sel.screen.user.home.BottomSheetTopic.BottomSheetTopic
 import com.example.sel.screen.user.home.HomeActivity
+import com.example.sel.screen.user.listenpodcast.ListenPodcastActivity
 
 class Podcast2Activity : BaseBindingActivity<Podcast2ViewModel, ActivityPodcast2Binding>(), View.OnClickListener  {
     var podcastId : Int ? = 0
@@ -33,7 +34,7 @@ class Podcast2Activity : BaseBindingActivity<Podcast2ViewModel, ActivityPodcast2
         viewModel.reponHistoryExam.observe(this){
             if (it?.Podcasts != null) {
                 // Hiển thị giá trị của responsePodcast
-                Toast.makeText(this, it.Podcasts.toString(), Toast.LENGTH_LONG).show()
+               // Toast.makeText(this, it.Podcasts.toString(), Toast.LENGTH_LONG).show()
             } else {
                 Toast.makeText(this, "No podcasts data received from API", Toast.LENGTH_LONG).show()
             }
@@ -92,7 +93,7 @@ class Podcast2Activity : BaseBindingActivity<Podcast2ViewModel, ActivityPodcast2
         podcastId = podcastItem.id
         Utils.startActivityWithResultCode(
             this@Podcast2Activity,
-            HistoryExamActivity(),
+            ListenPodcastActivity(),
             0,
             Bundle().apply {
                 putInt(Constants.BundleParam.PODCAST_ID,podcastId?:0)
