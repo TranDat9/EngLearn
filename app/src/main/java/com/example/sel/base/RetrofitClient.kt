@@ -7,16 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
     private const val BASE_URL = "https://api.dictionaryapi.dev/"
-    //private const val BASE_URL_AI = "https://api.openai.com/"
-    //private const val API_KEY = "sk-proj-E7SZkZ2EQYgnUOyLjkLiT3BlbkFJjRnONsdExJCPmghmJokc"
 
-
-//    private val authInterceptor = Interceptor { chain ->
-//        val newRequest = chain.request().newBuilder()
-//            .addHeader("Authorization", "Bearer $API_KEY")  // Sử dụng API_KEY đã khai báo
-//            .build()
-//        chain.proceed(newRequest)
-//    }
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
