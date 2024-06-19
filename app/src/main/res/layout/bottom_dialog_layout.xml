@@ -50,7 +50,7 @@
                     android:id="@+id/txtTitle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Chọn loại câu hỏi"
+                    android:text="Select Category Question"
                     android:fontFamily="@font/bungee"
                     app:layout_constraintBottom_toTopOf="@+id/lineTitle"
                     app:layout_constraintLeft_toLeftOf="parent"

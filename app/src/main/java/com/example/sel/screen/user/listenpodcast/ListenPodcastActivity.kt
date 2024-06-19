@@ -12,8 +12,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.sel.R
 import com.example.sel.base.BaseBindingActivity
 import com.example.sel.base.Constants
+import com.example.sel.base.Utils
 import com.example.sel.base.model.PodcastItem
 import com.example.sel.databinding.ActivityListenPodcastBinding
+import com.example.sel.screen.user.podcast2.Podcast2Activity
 
 
 class ListenPodcastActivity : BaseBindingActivity<ListenPodcastViewModel, ActivityListenPodcastBinding>(), View.OnClickListener  {
@@ -54,6 +56,7 @@ class ListenPodcastActivity : BaseBindingActivity<ListenPodcastViewModel, Activi
     private fun initListener() {
         binding?.imagebuttonplay?.setOnClickListener(this)
         binding?.imagebuttonrepeat?.setOnClickListener(this)
+        binding?.imgVBackPodcast?.setOnClickListener(this)
     }
 
     override fun fetchData() {
@@ -105,6 +108,14 @@ class ListenPodcastActivity : BaseBindingActivity<ListenPodcastViewModel, Activi
 //                        }
 //                }
 //            }
+            R.id.imgVBackPodcast ->{
+                Utils.startActivityWithResultCode(
+                    this@ListenPodcastActivity,
+                    Podcast2Activity(),
+                    0,
+                    null
+                )
+            }
         }
     }
 
@@ -155,11 +166,11 @@ class ListenPodcastActivity : BaseBindingActivity<ListenPodcastViewModel, Activi
         binding?.textViewTranscript?.text = spannableString
     }
 
-//    override fun onDestroy() {
-//        super.onDestroy()
-//        if (::mediaPlayer.isInitialized) {
-//            mediaPlayer.release()
-//        }
-//    }
+    override fun onPause() {
+        super.onPause()
+        if (::mediaPlayer.isInitialized && mediaPlayer.isPlaying) {
+            mediaPlayer.stop()
+        }
+    }
 
 }

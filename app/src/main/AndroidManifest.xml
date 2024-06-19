@@ -23,13 +23,14 @@
         <activity android:name=".screen.user.blog.AddArticleActivity" />
         <activity android:name=".screen.user.blog.BlogActivity" />
         <activity android:name=".screen.user.profile.ProfileActivity" />
+        <activity android:name=".screen.user.home.HomeActivity" />
         <activity android:name=".screen.user.register.RegisterActivity" />
         <activity android:name=".screen.user.choose_answer.ChooseAnswerActivity" />
         <activity android:name=".screen.user.resultAnswer.ResultAnswerActivity" />
         <activity android:name=".screen.user.ranking.RankingActivity" />
         <activity android:name=".screen.user.updatepasss.UpdatePassAcivity" />
         <activity
-            android:name=".screen.user.home.HomeActivity"
+            android:name=".screen.user.login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

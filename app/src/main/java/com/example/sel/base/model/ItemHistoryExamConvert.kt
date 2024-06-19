@@ -8,6 +8,7 @@ data class ItemHistoryExamConvert (
     var name_user : String?= null,
     var date : String?= null,
     var score : String?= null,
+    var question_check: List<QuestionCheck> ?=null,
 
     private val onItemCheckToggle: (ItemHistoryExamConvert)->Unit = {},
     override val layoutId :Int = R.layout.item_historyexam,

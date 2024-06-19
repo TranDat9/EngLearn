@@ -63,6 +63,7 @@ class HistoryExamViewModel(application: Application) : BasicViewModel(applicatio
                 name_user = it.name_user,
                date = it.created_at ,
                 score = it.score,
+                question_check=it.question_check,
                 onItemCheckToggle = ::onItemCheckToggle,
                 layoutId = R.layout.item_historyexam,
                 viewType = 0

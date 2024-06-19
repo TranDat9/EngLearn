@@ -39,7 +39,7 @@ class BlogActivity : AppCompatActivity() {
             startActivity(Intent(this, ProfileActivity::class.java))
         }
         binding.navimgBlog.setOnClickListener {
-            startActivity(Intent(this, HistoryExamActivity::class.java))
+            startActivity(Intent(this, BlogActivity::class.java))
         }
         binding.navimgHome.setOnClickListener {
             startActivity(Intent(this, HomeActivity::class.java))

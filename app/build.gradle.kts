@@ -63,6 +63,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.auth.ktx)
 
+    implementation("com.google.mlkit:translate:17.0.2")
+
     testImplementation(libs.junit)
     implementation("com.github.bumptech.glide:glide:4.11.0")
     androidTestImplementation(libs.androidx.junit)
@@ -70,6 +72,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+    implementation(libs.gson)
 
 
 }

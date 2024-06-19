@@ -45,7 +45,7 @@ interface ApiService {
             .addInterceptor(AuthInterceptor())
 
         val apiService: ApiService =
-            Retrofit.Builder().baseUrl("https://b584-42-118-176-129.ngrok-free.app")
+            Retrofit.Builder().baseUrl("https://3dc4-42-118-176-129.ngrok-free.app")
                 .addConverterFactory(GsonConverterFactory.create(gson)).client(okBuilder.build())
                 .build().create(ApiService::class.java)
     }
