@@ -40,13 +40,15 @@ interface ApiService {
         }
 
         private val okBuilder = OkHttpClient.Builder().readTimeout(20, TimeUnit.SECONDS)
-            .connectTimeout(20, TimeUnit.SECONDS).retryOnConnectionFailure(true)
+            .connectTimeout(20, TimeUnit.SECONDS)
+            .retryOnConnectionFailure(true)
             .addInterceptor(loggingInterceptor)
             .addInterceptor(AuthInterceptor())
 
         val apiService: ApiService =
-            Retrofit.Builder().baseUrl("https://3dc4-42-118-176-129.ngrok-free.app")
-                .addConverterFactory(GsonConverterFactory.create(gson)).client(okBuilder.build())
+            Retrofit.Builder().baseUrl("https://de61-2405-4803-fea0-1140-1176-8f5b-3a36-c716.ngrok-free.app")
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .client(okBuilder.build())
                 .build().create(ApiService::class.java)
     }
 

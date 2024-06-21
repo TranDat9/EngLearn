@@ -5,6 +5,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.webkit.URLUtil
 import android.widget.Button
@@ -62,6 +63,9 @@ class DictionaryActivity : AppCompatActivity() {
         btnTranslate = findViewById(R.id.imgtranslate)
         textViewDefinitionTranslate=findViewById(R.id.txtdefinitiontranslate)
 
+        btnAudio.visibility = View.GONE
+        btnTranslate.visibility = View.GONE
+
         btnBack.setOnClickListener {
             val intent = Intent(this@DictionaryActivity, HomeActivity::class.java)
             startActivity(intent)
@@ -69,6 +73,10 @@ class DictionaryActivity : AppCompatActivity() {
 
         editTextWord.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+
+                btnAudio.visibility = View.VISIBLE
+                btnTranslate.visibility = View.VISIBLE
+
                 textViewDefinitionTranslate.text =""
                 val word = editTextWord.text.toString()
                 if (word.isNotEmpty()) {
