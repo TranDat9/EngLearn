@@ -91,7 +91,6 @@ class BlogActivity : AppCompatActivity() {
 
         binding.floatingAddArticleButton.setOnClickListener {
 
-            Toast.makeText(this ,userId.toString()+userName.toString(),Toast.LENGTH_LONG).show()
            startActivity(Intent(this,AddArticleActivity::class.java))
 
         }

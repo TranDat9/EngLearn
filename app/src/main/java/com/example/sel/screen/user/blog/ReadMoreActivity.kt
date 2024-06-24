@@ -49,7 +49,7 @@ class ReadMoreActivity : AppCompatActivity() {
 
         val blogItem = intent.getParcelableExtra<BlogItemModel>("blogItem")
         val postId = intent.getStringExtra("postId")
-         Toast.makeText(this,postId.toString(),Toast.LENGTH_LONG ).show()
+         //Toast.makeText(this,postId.toString(),Toast.LENGTH_LONG ).show()
         if (blogItem!=null)
         {
             binding.txtRMheading.text = blogItem.heading.toString()
